@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 exports.login = async function (request, response) {
 	const { username, password } = request.body;
 
-	const user = await findByUsername(username);
+	const user = await findByUsername({ username });
+	console.log(user)
 
 	if (!user) {
 		return response.status(400).json({

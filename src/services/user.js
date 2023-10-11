@@ -1,9 +1,13 @@
 const User = require("../models/user");
 
-exports.insert = function (data) {
+exports.insert = (data) => {
 	return User.create(data);
 };
 
-exports.deleteUser = function (username) {
-	return User.deleteOne({userName:username});
+exports.deleteUserService = (username) => {
+	return User.deleteOne(username);
 };
+
+exports.findByUsername = (username) => {
+	return User.findOne(username)
+}

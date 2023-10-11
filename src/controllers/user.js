@@ -8,6 +8,6 @@ exports.createUser = async function (request, response) {
 
 exports.deleteUser = async function (request, response) {
 	const { username } = request.body;
-	const user = await deleteUserService(username);
-	response.status(204);
+	const user = await deleteUserService({ username });
+	response.status(204).send();
 };
