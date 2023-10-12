@@ -4,7 +4,7 @@ const {
 	insert,
 	deleteById,
 	update,
-} = require("../services/post");
+} = require("../services/categories");
 
 exports.getPosts = async function (request, response) {
 	const posts = await findAll();
@@ -18,16 +18,16 @@ exports.getPost = async function (request, response) {
 };
 
 exports.createPost = async function (request, response) {
-	const { title, content } = request.body;
-	const post = await insert({ title, content, userId: request.user.id });
+	const { name } = request.body;
+	const post = await insert({ name });
 	response.status(201).json(post);
 };
 
 exports.updatePost = async function (request, response) {
-	const { title, content } = request.body;
+	const { name } = request.body;
 	const { id } = request.params;
 
-	await update(id, { title, content });
+	await update(id, { name });
 	response.status(204).end();
 };
 
