@@ -1,6 +1,7 @@
 const { connect } = require("./models/mongoose");
 const User = require("./models/user");
 const RecordTests = require("./models/recordtests");
+const Question = require("./models/question");
 // const Post = require("./models/post");
 // const Comment = require("./models/comment");
 

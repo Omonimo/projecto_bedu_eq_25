@@ -1,7 +1,7 @@
 const passport = require("passport");
 const { Strategy, ExtractJwt } = require("passport-jwt");
 const { findById } = require("../services/user");
-const { validarTokenJWT } = require("../controllers/jwtt");
+const { validarTokenJWT } = require("../controllers/jwt");
 
 passport.use(
   new Strategy(
