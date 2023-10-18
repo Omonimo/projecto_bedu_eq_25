@@ -4,8 +4,8 @@ exports.insert = (data) => {
 	return User.create(data);
 };
 
-exports.deleteUserService = (username) => {
-	return User.deleteOne(username);
+exports.deleteUserService = (id) => {
+	return User.deleteOne({_id:id});
 };
 
 exports.findByUsername = (username) => {

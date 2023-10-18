@@ -7,7 +7,7 @@ exports.createUser = async function (request, response) {
 };
 
 exports.deleteUser = async function (request, response) {
-	const { username } = request.body;
-	const user = await deleteUserService({ username });
+	const { id } = request.params;
+	const user = await deleteUserService(id);
 	response.status(204).send();
 };

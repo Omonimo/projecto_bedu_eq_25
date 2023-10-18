@@ -7,6 +7,6 @@ const { createUser, deleteUser } = require("../controllers/user");
 // router.post("/users", validator.body(createUserSchema), createUser);
 
 router.post("/users", createUser);
-router.delete("/users", deleteUser);
+router.delete("/users/:id", deleteUser);
 
 module.exports = router;
