@@ -1,5 +1,7 @@
 require("dotenv").config();
-
+module.exports = {
+	SERVER_PORT: process.env.PORT || 3000
+  }
 const { initDatabase } = require("./db");
 initDatabase();
 
@@ -12,6 +14,7 @@ const userRouter = require("./routers/user");
 const authRouter = require("./routers/auth");
 const categoriesRouter = require("./routers/categories");
 const recordTestsRouter = require("./routers/recordtests");
+const questionRouter = require("./routers/question")
 // const commentRouter = require("./routers/comment");
 
 // const validationError = require("./middlewares/validation-error");
@@ -22,6 +25,7 @@ app.use(userRouter);
 app.use(authRouter);
 app.use(categoriesRouter);
 app.use(recordTestsRouter);
+app.use(questionRouter);
 // app.use(commentRouter);
 
 // // Manejo de errores
