@@ -1,4 +1,4 @@
-const { insert, deleteUserService } = require("../services/user");
+const { insert, deleteUserService, getUserService } = require("../services/user");
 
 exports.createUser = async function (request, response) {
 	const { username, password } = request.body;
@@ -10,4 +10,11 @@ exports.deleteUser = async function (request, response) {
 	const { id } = request.params;
 	const user = await deleteUserService(id);
 	response.status(204).send();
+};
+
+exports.getUser = async function (request, response) {
+	//const { id } = request.params;
+	//const user = await deleteUserService(id);
+	const user = await getUserService();
+	response.status(200).json(user);
 };
